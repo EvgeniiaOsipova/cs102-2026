@@ -39,7 +39,13 @@ def multiplicative_inverse(e: int, phi: int) -> int:
     >>> multiplicative_inverse(7, 40)
     23
     """
-    # PUT YOUR CODE HERE
+    x0, x1 = 1, 0
+    orig_phi = phi
+    while phi != 0:
+        q = e // phi
+        e, phi = phi, e % phi
+        x0, x1 = x1, x0 - q * x1
+    return x0 % orig_phi
     pass
 
 
