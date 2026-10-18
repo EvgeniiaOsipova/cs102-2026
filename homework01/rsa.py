@@ -26,7 +26,9 @@ def gcd(a: int, b: int) -> int:
     >>> gcd(3, 7)
     1
     """
-    
+    while b != 0:
+        a, b = b, a % b
+    return a
     pass
 
 
